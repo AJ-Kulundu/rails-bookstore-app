@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   #Associations
   belongs_to :author
+  has_many  :reviews, dependent: :destroy
   #Validations
   validates :name,:description,:price,:stock, presence: true
   validates :name, length: { minimum: 2 }

@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   #enums
   enum role: {user: 0, admin: 1}
+  #Associations
+  has_one :reviews, dependent: :destroy
 
   
 end
