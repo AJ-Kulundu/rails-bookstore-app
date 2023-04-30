@@ -1,0 +1,8 @@
+<h1><%=@book.name%> by <%=author_name(@book.author)%></h1>
+<p><%=@book.description%></p>
+<p>Price: $<%=@book.price%></p>
+<p>Available Units: <%=@book.stock%></p>
+
+
+<p><%=link_to 'Back', root_path%></p>
+

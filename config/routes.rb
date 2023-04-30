@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root "home#index"
   # Define resource
   resources :authors
+  resources :books
 end
