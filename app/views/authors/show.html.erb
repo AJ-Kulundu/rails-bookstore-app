@@ -1,0 +1,7 @@
+<h1><%=author_name(@author)%>'s books</h1>
+
+<% @author.books.each do |book| %>
+ <p><%= book.name%></p>
+ <p>Units: <%= book.stock%></p>
+ <p>Price: $<%= book.price%></p>
+<%end%>

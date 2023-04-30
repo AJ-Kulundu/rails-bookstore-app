@@ -9,6 +9,7 @@
 <h2>Books available</h2>
 <% @books.each do |book| %>
  <p><%= book.name%></p>
+ <p>Author: <%= author_name(book.author)%></p>
  <p>Units: <%= book.stock%></p>
  <p>Price: $<%= book.price%></p>
 <%end%>
