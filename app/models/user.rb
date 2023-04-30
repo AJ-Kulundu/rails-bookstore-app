@@ -6,7 +6,7 @@ class User < ApplicationRecord
   #enums
   enum role: {user: 0, admin: 1}
   #Associations
-  has_one :reviews, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   
 end
