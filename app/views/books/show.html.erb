@@ -3,6 +3,22 @@
 <p>Price: $<%=@book.price%></p>
 <p>Available Units: <%=@book.stock%></p>
 
+<%if user_signed_in?%>
+<p>Add a review</p>
+<%= form_with model: [@book,@book.reviews.build] do |form|%>
+<p><%= form.label :review %></p>
+<p><%= form.text_area :review %></p>
+<p><%= form.label :rating %></p>
+<p><%= form.select :rating, Review.ratings.keys %></p>
+<p><%= form.submit %></p>
+<%end%>
+<%else%>
+<p> To add a review <%= link_to "Sign In", new_user_session_path %></p>
+<%end%>
 
+<%@book.reviews.each do |review|%>
+<p><%=review.review%></p>
+<p><%=review.rating%></p>
+<%end%>
 <p><%=link_to 'Back', root_path%></p>
 
