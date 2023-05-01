@@ -16,7 +16,8 @@
 <p> To add a review <%= link_to "Sign In", new_user_session_path %></p>
 <%end%>
 
-<%@book.reviews.each do |review|%>
+<% @book.reviews.each do |review|%>
+<p><%=review.user.email%></p>
 <p><%=review.review%></p>
 <p><%=review.rating%></p>
 <%end%>
